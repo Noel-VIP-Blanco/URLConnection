@@ -1,10 +1,12 @@
 import javax.swing.JFrame;
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
+import java.net.*; 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.EventListener;
-public class FileExtractor
+public class FileExtractor implements ActionListener
 {
     private static JLabel title, url;
     private static JFrame frame;
@@ -40,6 +42,22 @@ public class FileExtractor
         
         loadButton = new JButton("Load");
         loadButton.setBounds(600, 50, 100, 20);
+        loadButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    URL url = new URL("https://gutenberg.org/cache/epub/70700/pg70700.txt");
+                    URLConnection connection = url.openConnection();
+
+                    // Read the contents of the URL
+                    //BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    String line;
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+            }   
+                
+            }
+        });
         panel.add(loadButton);
         
         
@@ -55,4 +73,9 @@ public class FileExtractor
         
         frame.setVisible(true);
     }
+    
+    @Override
+    public void actionPerformed(ActionEvent e){
+        
+    }   
 }
