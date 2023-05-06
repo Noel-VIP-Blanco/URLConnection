@@ -2,4 +2,10 @@
 comment0.target=FileExtractor
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-numComments=2
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=e
+comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment4.params=e
+comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
+numComments=5
